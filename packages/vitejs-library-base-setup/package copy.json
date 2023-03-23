@@ -1,0 +1,68 @@
+{
+  "name": "vitejs-library-base-setup",
+  "private": false,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build && tsc",
+    "lint": "eslint src\"**/*.ts*\"",
+    "lint:quiet": "lint --quiet",
+    "lint:fix": "yarn lint --fix",
+    "storybook": "start-storybook -p 6006",
+    "build:storybook": "build-storybook",
+    "tsc": "tsc --no-emit"
+  },
+  "files": [
+    "dist/**"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./button": {
+      "import": "./dist/components/button.js",
+      "require": "./dist/components/button.cjs",
+      "types": "./dist/types/components/button/button.d.ts"
+    },
+    "./*": {
+      "import": "./dist/components/*.js",
+      "require": "./dist/components/*.cjs",
+      "types": "./dist/types/components/index.d.ts"
+    },
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "devDependencies": {
+    "@4c/tsconfig": "^0.4.1",
+    "@babel/core": "^7.21.3",
+    "@podlipny/eslint-config": "^1.0.3",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-vite": "^0.4.2",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.0.28",
+    "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^8.3.0",
+    "postcss": "^8.4.21",
+    "sass": "^1.59.3",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0"
+  },
+  "dependencies": {
+    "global": "^4.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 5 versions"
+  ]
+}

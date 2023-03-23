@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strictPropertyInitialization": false,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "jsx": "preserve",
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "noFallthroughCasesInSwitch": true,
+    "experimentalDecorators": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "./dist/types",
+    // "outDir": "./dist/lib",
+    "declaration": true,
+    "incremental": false,
+    "paths": {
+      "@components": ["components"],
+      "@components/*": ["components/*"],
+      "@utils": ["utils"],
+      "@utils/*": ["utils/*"]
+    }
+  },
+  "include": ["./src", "**/*.ts", "**/*.tsx"],
+  "exclude": ["dist", "node_modules", "src/**/*.spec.ts", "src/**/*.stories.tsx"]
+}
